@@ -30,7 +30,7 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-img{image-orientation:from-image;max-width:100%}
+img{image-orientation:from-image;max-width:100%;height:auto}
 body{font-family:'Figtree',sans-serif;color:var(--ink);background:var(--white);font-size:16px;line-height:1.6;overflow-x:hidden}
 h1,h2,h3{font-family:'Bricolage Grotesque',sans-serif;line-height:1.12}
 a{color:inherit}
@@ -60,7 +60,7 @@ a{color:inherit}
 /* intro overlay */
 #intro{position:fixed;inset:0;background:var(--navy);z-index:200;display:flex;align-items:center;justify-content:center;transition:opacity .7s ease, visibility .7s ease}
 #intro.done{opacity:0;visibility:hidden}
-#intro img{width:200px;max-width:60%;animation:introPop 1s cubic-bezier(.2,.8,.25,1) both;background:#fff;border-radius:18px;padding:1rem 1.4rem}
+#intro img{width:min(340px,72vw);height:auto;animation:introPop 1s cubic-bezier(.2,.8,.25,1) both;background:#fff;border-radius:18px;padding:1.1rem 1.5rem}
 @keyframes introPop{from{opacity:0;transform:translateY(18px) scale(.94)}to{opacity:1;transform:none}}
 
 /* nav */
@@ -95,6 +95,20 @@ header.scrolled{box-shadow:0 6px 24px rgba(39,42,99,.08)}
 .hero::after{content:"";position:absolute;inset:0;background:
   linear-gradient(180deg,rgba(29,32,80,.55) 0%,rgba(29,32,80,.42) 55%,rgba(29,32,80,.68) 100%),
   linear-gradient(95deg,rgba(20,22,58,.88) 0%,rgba(20,22,58,.66) 38%,rgba(20,22,58,.12) 68%,rgba(20,22,58,0) 85%)}
+/* the two credentials, applied to the hero like stickers */
+.hero-stickers{position:absolute;z-index:3;right:clamp(18px,4vw,60px);top:clamp(104px,16vh,180px);display:grid;gap:14px;justify-items:end}
+.hero-sticker{background:#fff;border-radius:14px;padding:14px 16px;display:block;
+  box-shadow:0 2px 0 rgba(34,36,58,.18),0 26px 46px -18px rgba(0,0,0,.65);
+  transition:transform .45s cubic-bezier(.16,1,.3,1)}
+.hero-sticker:first-child{transform:rotate(-3deg)}
+.hero-sticker:last-child{transform:rotate(2.5deg)}
+.hero-sticker:hover{transform:rotate(0) translateY(-4px)}
+.hero-sticker img{display:block;height:auto}
+.hero-sticker.s-master img{width:168px}
+.hero-sticker.s-guarantee{background:var(--navy);padding:12px}
+.hero-sticker.s-guarantee img{width:96px}
+@media(max-width:1050px){.hero-stickers{right:16px;top:96px}.hero-sticker.s-master img{width:124px}.hero-sticker.s-guarantee img{width:74px}}
+@media(max-width:760px){.hero-stickers{gap:10px;right:12px;top:84px}.hero-sticker{padding:9px 11px;border-radius:11px}.hero-sticker.s-master img{width:92px}.hero-sticker.s-guarantee img{width:56px}}
 .hero-content{position:relative;z-index:2;color:#fff;padding:9rem 0 5rem;max-width:720px}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem;color:#cdeabf;margin-bottom:1.1rem}
 .hero-eyebrow svg{color:var(--green)}
@@ -229,9 +243,9 @@ footer{background:var(--navy);color:#c6c9e2;padding:3.2rem 0 2.2rem}
 .tick-list li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:var(--green-ink);margin-top:.6em}
 .col-2{columns:2;column-gap:32px}
 @media(max-width:640px){.col-2{columns:1}}
-.logo-strip{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(22px,4vw,54px);padding:10px 0}
-.logo-strip img{height:54px;width:auto;opacity:.78;filter:grayscale(1);transition:opacity .25s,filter .25s}
-.logo-strip img:hover{opacity:1;filter:none}
+.logo-strip{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(30px,5vw,72px);padding:16px 0}
+.logo-strip img{height:clamp(72px,8vw,104px);width:auto;opacity:.92;transition:opacity .25s,transform .25s}
+.logo-strip img:hover{opacity:1;transform:translateY(-3px)}
 .note-band{background:var(--bone);border:1px solid var(--line);padding:18px 22px;border-radius:12px;color:var(--muted);margin-top:22px}
 .note-band strong{color:var(--navy)}
 </style>
@@ -266,6 +280,10 @@ footer{background:var(--navy);color:#c6c9e2;padding:3.2rem 0 2.2rem}
     <div class="hero-slide" data-src="img/plumbing.jpg"></div>
     <div class="hero-slide" data-src="img/bathrooms_kitchens.jpg"></div>
   </div>
+  <div class="hero-stickers" aria-hidden="false">
+    <span class="hero-sticker s-master"><img src="img/logo-master1.png" alt="Registered Master Plumbers" width="2098" height="750"></span>
+    <span class="hero-sticker s-guarantee"><img src="img/guarantee.png" alt="100% Water Tight Guarantee" width="191" height="191"></span>
+  </div>
   <div class="container">
     <div class="hero-content">
       <span class="hero-eyebrow">
@@ -284,22 +302,7 @@ footer{background:var(--navy);color:#c6c9e2;padding:3.2rem 0 2.2rem}
   </div>
 </section>
 
-<section class="trust">
-  <div class="container trust-grid">
-    <div class="trust-item reveal">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-      <div><h3>Over 30 years of jobs behind us</h3><p>A back catalogue of successfully completed work spanning more than 30 years in Christchurch.</p></div>
-    </div>
-    <div class="trust-item reveal">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-      <div><h3>Registered Master Plumbers</h3><p>Certifying plumbers with public liability insurance, so the work is covered and compliant.</p></div>
-    </div>
-    <div class="trust-item reveal">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
-      <div><h3>Eftpos and credit card</h3><p>We take eftpos and credit card payments. Ask about our pensioner discount.</p></div>
-    </div>
-  </div>
-</section>
+
 
 <section class="section services" id="services">
   <div class="container">
@@ -362,10 +365,13 @@ footer{background:var(--navy);color:#c6c9e2;padding:3.2rem 0 2.2rem}
 
 <section class="section services" id="maintenance">
   <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">Plumbing maintenance</span>
-      <h2>Residential and light commercial</h2>
-      <p>A wide range of maintenance with a prompt, no fuss response.</p>
+    <div class="detail reveal" style="margin-bottom:2.4rem">
+      <div class="detail-media"><img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=1200&h=800&q=75" alt="Pipework and valves running along a wall" width="1200" height="800" loading="lazy"></div>
+      <div>
+        <span class="eyebrow">Plumbing maintenance</span>
+        <h3>Residential and light commercial</h3>
+        <p>A wide range of maintenance with a prompt, no fuss response, for homeowners and small commercial sites across Christchurch.</p>
+      </div>
     </div>
     <ul class="tick-list col-2 reveal">
       <li>Tap and mixer repairs</li>
@@ -383,9 +389,13 @@ footer{background:var(--navy);color:#c6c9e2;padding:3.2rem 0 2.2rem}
       <li>Water main repairs, leaking or replacement</li>
     </ul>
 
-    <div class="section-head reveal" style="margin-top:52px">
-      <h2>Plumbing rental maintenance</h2>
-      <p>Fast emergency response and preventative maintenance for residential properties, apartments, private landlords and investors.</p>
+    <div class="detail flip reveal" style="margin:3.4rem 0 2.4rem">
+      <div class="detail-media"><img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&h=800&q=75" alt="A tidy rental bathroom with shower and vanity" width="1200" height="800" loading="lazy"></div>
+      <div>
+        <span class="eyebrow">For landlords</span>
+        <h3>Plumbing rental maintenance</h3>
+        <p>Fast emergency response and preventative maintenance for residential properties, apartments, private landlords and investors.</p>
+      </div>
     </div>
     <ul class="tick-list col-2 reveal">
       <li>Email, text or phone your order through to us</li>
@@ -513,7 +523,7 @@ footer{background:var(--navy);color:#c6c9e2;padding:3.2rem 0 2.2rem}
       <h2>Need a plumber in Christchurch?</h2>
       <p>Call the team on 03 351 5421 for a prompt quote, or send through the details of the job.</p>
     </div>
-    <a class="btn btn-green" href="tel:+6433515421">Call 03 351 5421</a>
+    <a class="btn btn-green" href="review.html">Leave us a review</a>
   </div>
 </section>
 
