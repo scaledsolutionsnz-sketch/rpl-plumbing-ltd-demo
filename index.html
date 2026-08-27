@@ -108,7 +108,31 @@ header.scrolled{box-shadow:0 6px 24px rgba(39,42,99,.08)}
 .hero-sticker.s-guarantee{background:var(--navy);padding:12px}
 .hero-sticker.s-guarantee img{width:96px}
 @media(max-width:1050px){.hero-stickers{right:16px;top:96px}.hero-sticker.s-master img{width:124px}.hero-sticker.s-guarantee img{width:74px}}
-@media(max-width:760px){.hero-stickers{gap:10px;right:12px;top:84px}.hero-sticker{padding:9px 11px;border-radius:11px}.hero-sticker.s-master img{width:92px}.hero-sticker.s-guarantee img{width:56px}}
+/* on a phone the stickers sit as a row across the top, and the copy starts
+   below them, otherwise they land on the eyebrow line */
+@media(max-width:760px){
+  .hero-stickers{display:flex;align-items:center;gap:10px;right:12px;top:82px}
+  .hero-sticker{padding:8px 10px;border-radius:11px}
+  .hero-sticker.s-master img{width:86px}
+  .hero-sticker.s-guarantee img{width:42px}
+  .hero-content{padding-top:10.2rem}
+}
+/* rotating customer testimonial in the hero */
+.hero-revs{position:relative;margin-top:1.9rem;max-width:520px;padding:1.05rem 1.25rem;
+  background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.22);border-radius:14px;
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.hero-revs .hr-stars{display:flex;gap:3px;margin-bottom:.55rem}
+.hero-revs .hr-stars svg{width:15px;height:15px;color:#8FD96F}
+.hero-rev{display:none}
+.hero-rev.on{display:block;animation:hrIn .6s cubic-bezier(.2,.7,.25,1) both}
+@keyframes hrIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+.hero-revs p{margin:0 0 .5rem;color:#fff;font-size:.98rem;line-height:1.55}
+.hero-revs cite{font-style:normal;font-size:.8rem;color:#cdd2f0;letter-spacing:.02em}
+.hero-revs a.hr-more{display:inline-block;margin-top:.55rem;font-size:.76rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;color:#8FD96F;text-decoration:none}
+.hero-revs a.hr-more:hover{text-decoration:underline}
+@media(max-width:760px){.hero-revs{max-width:100%;padding:.95rem 1.05rem}.hero-revs p{font-size:.94rem}}
+@media(prefers-reduced-motion:reduce){.hero-rev.on{animation:none}}
 .hero-content{position:relative;z-index:2;color:#fff;padding:9rem 0 5rem;max-width:720px}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem;color:#cdeabf;margin-bottom:1.1rem}
 .hero-eyebrow svg{color:var(--green)}
@@ -297,6 +321,15 @@ footer{background:var(--navy);color:#c6c9e2;padding:3.2rem 0 2.2rem}
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.94.36 1.86.68 2.75a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.33-1.33a2 2 0 0 1 2.11-.45c.89.32 1.81.55 2.75.68A2 2 0 0 1 22 16.92z"/></svg>
           Call 03 351 5421</a>
         <a class="btn btn-ghost" href="#contact">Get a quote</a>
+        <div class="hero-revs" id="heroRevs">
+          <div class="hr-stars" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg></div>
+          <figure class="hero-rev on"><p>"Honest and very sharp price on my repair. The insurance assessor was very impressed with the cost of my insurance repair from this company."</p><cite>Christopher</cite></figure>
+          <figure class="hero-rev"><p>"Chris has saved my hide a few times coming out to urgent jobs. Highly dependable and recommended!"</p><cite>Dave</cite></figure>
+          <figure class="hero-rev"><p>"I thought service, honesty and integrity at this level was a thing of the past! These guys are excellent!!! I will not consider anyone else for my properties."</p><cite>Ric609</cite></figure>
+          <figure class="hero-rev"><p>"The quality of workmanship exceeded my expectations. When inspected by City Council, the inspector commented on the neatness of the work done."</p><cite>Philip Speedy</cite></figure>
+          <figure class="hero-rev"><p>"I rang at lunchtime and Chris was over in the afternoon and fixed the leaking toilet! I would use Chris again and recommend to others."</p><cite>Miss Karen</cite></figure>
+          <a class="hr-more" href="#reviews">Read more testimonials</a>
+        </div>
       </div>
     </div>
   </div>
@@ -637,6 +670,21 @@ var io=new IntersectionObserver(function(entries){
   entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
 },{threshold:0.12});
 document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+
+// rotate the hero testimonials
+(function(){
+  var wrap=document.getElementById('heroRevs');
+  if(!wrap) return;
+  var items=wrap.querySelectorAll('.hero-rev');
+  if(items.length<2) return;
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var i=0;
+  setInterval(function(){
+    items[i].classList.remove('on');
+    i=(i+1)%items.length;
+    items[i].classList.add('on');
+  },6000);
+})();
 </script>
 </body>
 </html>
