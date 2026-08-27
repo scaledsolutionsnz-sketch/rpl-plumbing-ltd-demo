@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>RPL Plumbing Ltd | Plumber, Cromwell</title>
-<meta name="description" content="RPL Plumbing Ltd — registered Master Plumbers serving Cromwell and Central Otago. Plumbing maintenance, hot water cylinders, bathrooms, kitchens and new builds. Call Michael on 021 111 0283.">
-<meta property="og:title" content="RPL Plumbing Ltd | Plumber, Cromwell">
-<meta property="og:description" content="Registered Master Plumbers serving Cromwell &amp; Central Otago. Maintenance, hot water cylinders, bathrooms and new builds.">
-<meta property="og:image" content="https://rpl-plumbing-ltd-demo.vercel.app/img/logo.png">
+<title>RPL Plumbing Ltd | Plumbers in Christchurch</title>
+<meta name="description" content="RPL Plumbing, registered Master Plumbers in Christchurch. Plumbing maintenance, hot water cylinders, bathrooms, new builds and backflow IQP. Call 03 351 5421.">
+<meta property="og:title" content="RPL Plumbing Ltd | Plumbers in Christchurch">
+<meta property="og:description" content="Registered Master Plumbers in Christchurch since 2004. Maintenance, hot water cylinders, bathrooms, new builds and backflow IQP.">
+<meta property="og:image" content="https://rpl-plumbing-ltd-demo.vercel.app/img/rpl-van.jpg">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/png" href="img/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -203,6 +203,23 @@ footer{background:var(--navy);color:#c6c9e2;padding:3.2rem 0 2.2rem}
   .hero-slide{transition:none}
   html{scroll-behavior:auto}
 }
+
+/* ---- added for the full site content ---- */
+.detail{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,4vw,56px);align-items:center}
+.detail.flip .detail-media{order:2}
+.detail-media img{width:100%;border-radius:16px;display:block;box-shadow:0 18px 44px -26px rgba(34,36,58,.5)}
+.detail h3{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(1.3rem,2.4vw,1.9rem);color:var(--navy);margin:10px 0 12px}
+.detail p{color:var(--muted);margin-bottom:12px}
+@media(max-width:860px){.detail{grid-template-columns:1fr}.detail.flip .detail-media{order:0}}
+.tick-list{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:9px}
+.tick-list li{display:flex;gap:10px;align-items:flex-start;color:var(--muted);font-size:.97rem}
+.tick-list li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:var(--green);margin-top:.6em}
+.col-2{columns:2;column-gap:32px}
+@media(max-width:640px){.col-2{columns:1}}
+.logo-strip{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(22px,4vw,54px);padding:10px 0}
+.logo-strip img{height:54px;width:auto;opacity:.78;filter:grayscale(1);transition:opacity .25s,filter .25s}
+.logo-strip img:hover{opacity:1;filter:none}
+.note-band{background:var(--bone);border-left:3px solid var(--green);padding:16px 20px;border-radius:0 12px 12px 0;color:var(--muted);margin-top:22px}
 </style>
 </head>
 <body>
@@ -217,11 +234,11 @@ footer{background:var(--navy);color:#c6c9e2;padding:3.2rem 0 2.2rem}
         <li><a href="#services">Services</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#crew">Our Team</a></li>
-        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#reviews">Testimonials</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a class="nav-call" href="tel:+64211110283">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          021 111 0283</a></li>
+        <li><a class="nav-call" href="tel:+6433515421">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.94.36 1.86.68 2.75a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.33-1.33a2 2 0 0 1 2.11-.45c.89.32 1.81.55 2.75.68A2 2 0 0 1 22 16.92z"/></svg>
+          03 351 5421</a></li>
       </ul>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -230,28 +247,24 @@ footer{background:var(--navy);color:#c6c9e2;padding:3.2rem 0 2.2rem}
 
 <section class="hero" id="top">
   <div class="hero-slides" aria-hidden="true">
-    <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1542013936693-884638332954?w=1900&q=80&auto=format&fit=crop')"></div>
-    <div class="hero-slide" data-src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1900&q=80&auto=format&fit=crop"></div>
-    <div class="hero-slide" data-src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=1900&q=80&auto=format&fit=crop"></div>
+    <div class="hero-slide active" style="background-image:url('img/rpl-van.jpg')"></div>
+    <div class="hero-slide" data-src="img/plumbing.jpg"></div>
+    <div class="hero-slide" data-src="img/bathrooms_kitchens.jpg"></div>
   </div>
   <div class="container">
     <div class="hero-content">
       <span class="hero-eyebrow">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
-        Cromwell &middot; Central Otago &middot; Master Plumbers
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
+        Christchurch &middot; Registered Master Plumbers
       </span>
-      <h1>Plumbing done properly in Cromwell &amp; Central Otago.</h1>
-      <p>Maintenance, hot water cylinders, bathrooms and new builds — registered plumbers backed by the Rohland family's decades in the trade.</p>
+      <h1>For a reliable plumbing service in Christchurch.</h1>
+      <p>Whether you have a broken pipe, a faulty hot water cylinder or a plumbing emergency that needs serious attention right now, our team can be relied upon to provide a prompt and professional service.</p>
       <div class="hero-ctas">
-        <a class="btn btn-green" href="tel:+64211110283">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          Call for a quote</a>
-        <a class="btn btn-ghost" href="#contact">Get in touch</a>
+        <a class="btn btn-green" href="tel:+6433515421">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.94.36 1.86.68 2.75a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.33-1.33a2 2 0 0 1 2.11-.45c.89.32 1.81.55 2.75.68A2 2 0 0 1 22 16.92z"/></svg>
+          Call 03 351 5421</a>
+        <a class="btn btn-ghost" href="#contact">Get a quote</a>
       </div>
-      <a class="hero-rating" href="https://www.google.com/maps/place/?q=place_id:ChIJ71RGRwWLMW0Rgi2l33gFGQo" target="_blank" rel="noopener">
-        <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <span>5.0 rated on Google</span>
-      </a>
     </div>
   </div>
 </section>
@@ -259,16 +272,16 @@ footer{background:var(--navy);color:#c6c9e2;padding:3.2rem 0 2.2rem}
 <section class="trust">
   <div class="container trust-grid">
     <div class="trust-item reveal">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-      <div><h3>On time, every time</h3><p>We turn up when we say we will — and keep you posted if a job runs over.</p></div>
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      <div><h3>Over 30 years of jobs behind us</h3><p>A back catalogue of successfully completed work spanning more than 30 years in Christchurch.</p></div>
     </div>
     <div class="trust-item reveal">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12l2 2 4-4"/><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      <div><h3>Registered &amp; certified</h3><p>NZ certified Master Plumbers — qualified for everything from repairs to new builds.</p></div>
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+      <div><h3>Registered Master Plumbers</h3><p>Certifying plumbers with public liability insurance, so the work is covered and compliant.</p></div>
     </div>
     <div class="trust-item reveal">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-      <div><h3>Clear, honest quotes</h3><p>Straight pricing before the work starts. No surprises on the invoice.</p></div>
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+      <div><h3>Eftpos and credit card</h3><p>We take eftpos and credit card payments. Ask about our pensioner discount.</p></div>
     </div>
   </div>
 </section>
@@ -277,75 +290,139 @@ footer{background:var(--navy);color:#c6c9e2;padding:3.2rem 0 2.2rem}
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">What we do</span>
-      <h2>Plumbing services for homes and businesses</h2>
-      <p>From a dripping tap to a full new build, RPL Plumbing handles the lot across Cromwell and Central Otago.</p>
+      <h2>For plumbers you can trust in Christchurch</h2>
+      <p>We will have someone come out to provide you with a prompt quote, and you can be sure the job will be completed properly, first time. Our services include water leak repairs, water mains maintenance, hot water cylinder replacements, and much more.</p>
     </div>
     <div class="services-grid">
       <article class="service-card reveal">
-        <div class="thumb"><img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=900&q=75&auto=format&fit=crop" alt="Chrome bath tap and fittings" loading="lazy" width="900" height="506"></div>
+        <div class="thumb"><img src="img/bathrooms_kitchens.jpg" alt="New bathroom and kitchen plumbing installation" loading="lazy"></div>
         <div class="service-body">
-          <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>Plumbing maintenance &amp; repairs</h3>
-          <p>Leaking taps, running toilets, burst pipes and everything in between — fixed properly the first visit.</p>
+          <h3>New bathrooms, kitchens and new builds</h3>
+          <p>Extending your house or building a new home? We take care of all your plumbing installation for the bathroom, kitchen or laundry. These jobs need doing properly with no corners cut, to prevent problems down the line.</p>
         </div>
       </article>
       <article class="service-card reveal">
-        <div class="thumb"><img src="https://images.unsplash.com/photo-1620653713380-7a34b773fef8?w=900&q=75&auto=format&fit=crop" alt="Plumber adjusting a hot water cylinder connection with a wrench" loading="lazy" width="900" height="506"></div>
+        <div class="thumb"><img src="img/plumbing.jpg" alt="Plumbing maintenance and pipe repairs" loading="lazy"></div>
         <div class="service-body">
-          <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2c-5 5.5-7 8.5-7 12a7 7 0 0 0 14 0c0-3.5-2-6.5-7-12z"/></svg>Hot water cylinders</h3>
-          <p>Repairs, replacements and new installs — mains pressure or low pressure, sized right for your household.</p>
+          <h3>Plumbing maintenance</h3>
+          <p>Tap repairs, blocked toilets, pipe repairs, burst pipes, and bathroom and kitchen renovations. A prompt response and a no fuss solution, for residential and commercial clients.</p>
         </div>
       </article>
       <article class="service-card reveal">
-        <div class="thumb"><img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?w=900&q=75&auto=format&fit=crop" alt="Renovated white bathroom with freestanding bath" loading="lazy" width="900" height="506"></div>
+        <div class="thumb"><img src="img/hotwater_cylinders.jpg" alt="Hot water cylinder installation" loading="lazy"></div>
         <div class="service-body">
-          <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16a1 1 0 0 1 1 1v1a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5v-1a1 1 0 0 1 1-1z"/><path d="M6 12V5a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2"/><path d="M6 19l-1 2M18 19l1 2"/></svg>Bathrooms &amp; kitchens</h3>
-          <p>Complete bathroom and kitchen plumbing for renovations — from first fix through to the finished fit-off.</p>
+          <h3>Hot water cylinders and valves</h3>
+          <p>Cylinder replacements and upgrades, valve replacements, hot water safety checks, and element and thermostat replacements. We believe no one should be left without hot water.</p>
         </div>
       </article>
       <article class="service-card reveal">
-        <div class="thumb"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=75&auto=format&fit=crop" alt="Modern new-build home at dusk" loading="lazy" width="900" height="506"></div>
+        <div class="thumb"><img src="img/backflow_iqp_400.jpg" alt="Backflow prevention device testing" loading="lazy"></div>
         <div class="service-body">
-          <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9.5L12 3l9 6.5"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>New builds &amp; renovations</h3>
-          <p>Full plumbing packages for new homes and major renovations, run by a foreman who's overseen new builds since 2004.</p>
+          <h3>Backflow prevention and IQP</h3>
+          <p>Site surveying for cross connection, installation of backflow devices, annual testing and maintenance. Protecting the drinking water supply from contamination.</p>
         </div>
       </article>
-      <article class="service-card reveal">
-        <div class="thumb"><img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=900&q=75&auto=format&fit=crop" alt="Commercial pipework and backflow valves on a brick wall" loading="lazy" width="900" height="506"></div>
-        <div class="service-body">
-          <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Backflow prevention (IQP)</h3>
-          <p>IQP backflow testing, installation and certification to keep commercial and council supplies compliant.</p>
-        </div>
-      </article>
-      <article class="service-card reveal">
-        <div class="thumb"><img src="https://images.unsplash.com/photo-1542013936693-884638332954?w=900&q=75&auto=format&fit=crop" alt="Kitchen mixer tap with running water" loading="lazy" width="900" height="506"></div>
-        <div class="service-body">
-          <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>Urgent callouts</h3>
-          <p>Burst pipe or no hot water? Call us — urgent jobs get sorted fast, with honest advice over the phone first.</p>
-        </div>
-      </article>
+    </div>
+
+    <div class="note-band reveal">
+      <strong>Also on the list:</strong> blocked waste pipes, toilets, gulleys and traps and drains. We also supply and install fridge, under bench, counter top and chlorine reduction filters, plus complete house filtration and UV sterilising systems for tank water.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="hot-water">
+  <div class="container">
+    <div class="detail reveal">
+      <div class="detail-media"><img src="img/hot-water-cylinders-hp2.jpg" alt="Hot water cylinder installed by RPL Plumbing" loading="lazy"></div>
+      <div>
+        <span class="eyebrow">Hot water</span>
+        <h3>Your hot water system is the engine room of your home</h3>
+        <p>It helps ensure your bathroom, kitchen and laundry perform well every day. From the invigorating morning shower to the heavy duty clothes wash, you need a system that meets the needs of your family.</p>
+        <p><strong>Medium pressure cylinders</strong> are a step up from low pressure, giving stronger flow to showers and mixing taps. It is not mains pressure, but it is a great alternative without the cost of a full upgrade. These are vitreous enamel lined, which suits a greater range of water conditions, and the valves are upgraded to enable stronger pressure.</p>
+        <p><strong>Mains pressure cylinders</strong> are normally glass lined steel. If your town supply pressure is not great, a mains pressure cylinder will not make a lot of difference. Often with mains pressure, if more than one tap is running there is very little change to water temperature.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section services" id="maintenance">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Plumbing maintenance</span>
+      <h2>Residential and light commercial</h2>
+      <p>A wide range of maintenance with a prompt, no fuss response.</p>
+    </div>
+    <ul class="tick-list col-2 reveal">
+      <li>Tap and mixer repairs</li>
+      <li>Toilet cistern repairs and replacement</li>
+      <li>Shower head replacements</li>
+      <li>Hand held shower slides, installation</li>
+      <li>Water filter replacement</li>
+      <li>Icemaker fridges, installation and pipe work</li>
+      <li>Super tubs, installation and replacement</li>
+      <li>Blocked internal waste pipes</li>
+      <li>Internal pipe work, replacement and repair</li>
+      <li>Hot water cylinder overflows</li>
+      <li>Water pipes, repairs to leaking or damaged pipes</li>
+      <li>Wastemasters and Insinkerators, unjamming and new units</li>
+      <li>Water main repairs, leaking or replacement</li>
+    </ul>
+
+    <div class="section-head reveal" style="margin-top:52px">
+      <h2>Plumbing rental maintenance</h2>
+      <p>Fast emergency response and preventative maintenance for residential properties, apartments, private landlords and investors.</p>
+    </div>
+    <ul class="tick-list col-2 reveal">
+      <li>Email, text or phone your order through to us</li>
+      <li>We contact the tenant straight away so they are not chasing you</li>
+      <li>We arrange a suitable time for access</li>
+      <li>Our plumbers advise on site if a job is going to go over a maximum figure</li>
+      <li>Our plumbers do not do any work outside the original job request</li>
+      <li>Invoicing daily, posted or emailed</li>
+      <li>Invoices carry full address, tenant details, descriptions and photos</li>
+      <li>A 24/7 service answered by a team member</li>
+      <li>Discounted rates for property managers</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="backflow">
+  <div class="container">
+    <div class="detail flip reveal">
+      <div class="detail-media"><img src="img/backflow_prevention_400.png" alt="How backflow contaminates a water supply" loading="lazy"></div>
+      <div>
+        <span class="eyebrow">Backflow and IQP</span>
+        <h3>Protecting the drinking water supply</h3>
+        <p>There is a risk to public health if there is a cross connection between your water supply and a contaminated source. If there is a pressure drop in the water main, a vacuum can be created, and under certain conditions this siphons liquid from a contaminated source back into the drinking water supply.</p>
+        <p>Water pressure can be affected by a break in the main, water being pumped during a fire, a customer using water at higher pressure than supplied, heavy use downstream, or an outlet sitting higher than the main.</p>
+        <p><strong>Properties that pose a particular risk</strong> include chemical plants, pest controllers, market gardens, golf courses and sporting ovals, caravan parks, greywater treatment systems, metal processing plants, paint manufacturers, laundries, nurseries, and residential properties with rainwater storage.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="section" id="about">
-  <div class="container about-grid">
-    <div class="about-media reveal">
-      <img src="https://images.unsplash.com/photo-1604709177225-055f99402ea3?w=1100&q=75&auto=format&fit=crop" alt="Quality finished bathroom with stone tiling and black tapware" loading="lazy" width="1100" height="825">
-      <span class="about-tag">Family trade since 2004</span>
-    </div>
-    <div class="about-copy reveal">
-      <span class="eyebrow">About us</span>
-      <h2 style="font-size:clamp(1.8rem,4.2vw,2.6rem);font-weight:800;color:var(--navy);margin-bottom:1rem">A family plumbing firm, built on word of mouth</h2>
-      <p>Rohland Plumbing Ltd — RPL Plumbing — is a family-run firm of NZ certified Master Plumbers. Founded by Chris Rohland in 2004, the business has been built job by job on honest pricing, tidy workmanship and turning up when we say we will.</p>
-      <p>Michael Rohland, registered plumber and foreman, looks after Cromwell and the wider Central Otago region — from everyday maintenance through to complete new-build plumbing.</p>
-      <ul class="about-check">
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Family-owned and operated since 2004</li>
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Clear quotes before any work starts</li>
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Workmanship guaranteed by Master Plumbers</li>
-      </ul>
-      <div class="about-badges">
-        <img src="img/logo-master1.png" alt="Master Plumbers member logo" loading="lazy">
-        <img src="img/guarantee.png" alt="Workmanship guarantee badge" loading="lazy">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-media reveal">
+        <img src="img/rpl-van.jpg" alt="The RPL Plumbing van in Christchurch" loading="lazy">
+        <span class="about-tag">Christchurch since 2004</span>
+      </div>
+      <div class="about-copy reveal">
+        <span class="eyebrow">About RPL Plumbing</span>
+        <h2>For quality plumbing, trust Christchurch's specialists</h2>
+        <p>Work with a team of experienced and certified plumbers with a back catalogue of successfully completed jobs spanning over 30 years. Whether you need a hot water service installed or fixtures for your new home, our efficient service and friendly team make us a fantastic option.</p>
+        <p>With RPL Plumbing you never run the risk of having to fix the same problem twice. Once we diagnose and repair your plumbing, the issue is resolved and it stays fixed.</p>
+        <p>Over the years we have installed thousands of hot water cylinders in Auckland and Christchurch, and our main focus is a compliant installation. We employ our own staff and do not subcontract any of our work, so one company means one warranty, with no cylinder guy blaming another.</p>
+        <ul class="about-check">
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Registered Master Plumbers with public liability insurance</li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>We employ our own staff, nothing is subcontracted</li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>An extensive supplier network, with the savings passed on</li>
+        </ul>
+        <div class="about-badges">
+          <img src="img/logo-master1.png" alt="Master Plumbers member" loading="lazy">
+          <img src="img/guarantee.png" alt="Master Plumbers guarantee" loading="lazy">
+        </div>
       </div>
     </div>
   </div>
@@ -354,27 +431,41 @@ footer{background:var(--navy);color:#c6c9e2;padding:3.2rem 0 2.2rem}
 <section class="section crew" id="crew">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow">Meet the crew</span>
-      <h2>The people behind the vans</h2>
-      <p>A small team means the person quoting your job is the person doing it.</p>
+      <span class="eyebrow">Our team</span>
+      <h2>About the RPL Plumbing team</h2>
+      <p>A team of professional plumbers operating throughout the Christchurch area, handling all plumbing installations and repairs.</p>
     </div>
     <div class="crew-grid">
       <article class="crew-card reveal">
-        <div class="photo"><img src="img/michael-rohland-plumber.jpg" alt="Michael Rohland, registered plumber and foreman" loading="lazy" width="400" height="533"></div>
+        <div class="photo"><img src="img/chris-rohland-plumber.jpg" alt="Chris Rohland, Managing Director" loading="lazy"></div>
         <div class="crew-body">
-          <h3>Michael Rohland</h3>
-          <div class="role">Foreman &middot; Registered Plumber</div>
-          <p>With RPL since 2004, Michael oversees all new building projects and pitches in on maintenance — your first call for anything plumbing in Cromwell.</p>
+          <h3>Chris Rohland</h3>
+          <span class="role">Managing Director</span>
+          <p>A certifying plumber and drainlayer with 40 years experience, Chris started Rohland Plumbing in 2004. He is in the office frequently but stays on the tools doing plumbing maintenance, and takes on quoting for both large and small jobs. In his spare time he enjoys getting out into nature and exploring the South Island.</p>
         </div>
       </article>
       <article class="crew-card reveal">
-        <div class="photo"><img src="img/chris-rohland-plumber.jpg" alt="Chris Rohland, certifying plumber and drainlayer" loading="lazy" width="400" height="533"></div>
+        <div class="photo"><img src="img/michael-rohland-plumber.jpg" alt="Michael Rohland, Foreman" loading="lazy"></div>
         <div class="crew-body">
-          <h3>Chris Rohland</h3>
-          <div class="role">Managing Director &middot; Certifying Plumber &amp; Drainlayer</div>
-          <p>Founder of the firm with around 40 years in the trade. Chris's rule is simple: clients come back when the service is superior.</p>
+          <h3>Michael Rohland</h3>
+          <span class="role">Foreman</span>
+          <p>Michael qualified as a registered plumber with another company before joining Rohland Plumbing in October 2004. He is the foreman for all new builds and helps out on maintenance. Outside work he spends time with his young family and umpires for the Canterbury Regional Cricket Umpires and Scorers Association.</p>
         </div>
       </article>
+    </div>
+  </div>
+</section>
+
+<section class="section services">
+  <div class="container">
+    <div class="section-head reveal" style="text-align:center">
+      <span class="eyebrow">Trusted by</span>
+      <h2>Property managers who use us</h2>
+    </div>
+    <div class="logo-strip reveal">
+      <img src="img/braziers-property-investments-logo.jpg" alt="Braziers Property Investments" loading="lazy">
+      <img src="img/elmswood-logo.jpg" alt="Elmswood" loading="lazy">
+      <img src="img/stripes-logo.jpg" alt="Stripes" loading="lazy">
     </div>
   </div>
 </section>
@@ -383,123 +474,96 @@ footer{background:var(--navy);color:#c6c9e2;padding:3.2rem 0 2.2rem}
   <div class="container">
     <div class="reviews-head-row reveal">
       <div class="section-head" style="margin-bottom:0">
-        <span class="eyebrow">Reviews</span>
-        <h2>What customers say</h2>
-        <p>Rated 5.0 on Google — here's what people tell us after the job's done.</p>
+        <span class="eyebrow">Testimonials</span>
+        <h2>Rohland Plumbing customer testimonials</h2>
       </div>
-      <a class="btn btn-navy" href="https://www.google.com/maps/place/?q=place_id:ChIJ71RGRwWLMW0Rgi2l33gFGQo" target="_blank" rel="noopener">See all our Google reviews</a>
     </div>
     <div class="reviews-grid">
-      <article class="review-card reveal">
-        <div class="review-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>"Honest and very sharp price on my repair. The insurance assessor was very impressed with the cost of my insurance repair from this company. Highly recommend."</p>
-        <div class="who">Christopher <span>Customer testimonial</span></div>
-      </article>
-      <article class="review-card reveal">
-        <div class="review-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>"I rang at lunchtime and Chris was over in the afternoon and fixed the leaking toilet! I would use Chris again and recommend to others."</p>
-        <div class="who">Miss Karen <span>Customer testimonial</span></div>
-      </article>
-      <article class="review-card reveal">
-        <div class="review-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>"I was very impressed with the job Chris did for me and would definitely recommend him to anyone needing an honest, reliable, competent plumber."</p>
-        <div class="who">I. Poole <span>Customer testimonial</span></div>
-      </article>
+      <article class="review-card reveal"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Honest and very sharp price on my repair. The insurance assessor was very impressed with the cost of my insurance repair from this company. Highly recommend."</p><div class="who"><span>Christopher</span></div></article>
+      <article class="review-card reveal"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Chris has saved my hide a few times coming out to urgent jobs. Highly dependable and recommended!"</p><div class="who"><span>Dave</span></div></article>
+      <article class="review-card reveal"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"I thought service, honesty and integrity at this level was a thing of the past! These guys are excellent!!! I will not consider anyone else for my properties."</p><div class="who"><span>Ric609</span></div></article>
+      <article class="review-card reveal"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"I received three quotations for connecting the downpipes from a new garage to an existing storm water retention tank. Rohland Plumbing submitted the most affordable quotation and were willing to do the job within the week. The quality of workmanship exceeded my expectations. In fact, when inspected by City Council, the inspector commented on the neatness of the work done."</p><div class="who"><span>Philip Speedy</span></div></article>
+      <article class="review-card reveal"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Chris was recommended to me by a friend who had done some work at her house. I rang at lunchtime and Chris was over in the afternoon and fixed the leaking toilet! I would use Chris again and recommend to others."</p><div class="who"><span>Miss Karen</span></div></article>
+      <article class="review-card reveal"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"My very elderly neighbour had been told that her hot water cylinder was leaking and needed fixing. Chris checked it and there was nothing wrong with it, he didn't even charge her for that. What a decent guy!"</p><div class="who"><span>I. Poole</span></div></article>
+      <article class="review-card reveal"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"We found Chris Rohland and are totally satisfied with his performance. He met us on site at the time he stated he would be there, decided he and his son could do the job that same afternoon, and did. He charged as stated, a reasonable hourly rate and no mileage charges. They definitely represent honest and old fashioned, meaning quality, tradesmanship."</p><div class="who"><span>landlord2</span></div></article>
+      <article class="review-card reveal"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"I appreciated the way Chris always took the time to explain what the problem was and what he had done to rectify it. Another great tradesman from this site."</p><div class="who"><span>PJF</span></div></article>
     </div>
-    <p class="reviews-note reveal">Testimonials from RPL Plumbing's customers. Read more on their <a href="https://www.google.com/maps/place/?q=place_id:ChIJ71RGRwWLMW0Rgi2l33gFGQo" target="_blank" rel="noopener">Google profile</a>.</p>
+    <p class="reviews-note reveal">Testimonials as published on rplplumbing.co.nz.</p>
   </div>
 </section>
 
 <section class="review-banner">
-  <div class="container review-banner-inner reveal">
+  <div class="container review-banner-inner">
     <div>
-      <h2>Happy with our work? Leave us a review.</h2>
-      <p>A quick Google review helps other Central Otago locals find a plumber they can trust.</p>
+      <h2>Need a plumber in Christchurch?</h2>
+      <p>Call the team on 03 351 5421 for a prompt quote, or send through the details of the job.</p>
     </div>
-    <a class="btn btn-green" href="https://search.google.com/local/writereview?placeid=ChIJ71RGRwWLMW0Rgi2l33gFGQo" target="_blank" rel="noopener">Leave a Google review</a>
+    <a class="btn btn-green" href="tel:+6433515421">Call 03 351 5421</a>
   </div>
 </section>
 
 <section class="section contact" id="contact">
-  <div class="container contact-grid">
-    <div class="reveal">
-      <span class="eyebrow" style="color:var(--green)">Contact</span>
-      <h2>Get your job sorted</h2>
-      <p style="color:#c6c9e2;max-width:460px">Ring Michael for a straight answer and a clear quote — or flick us an email with what you need done.</p>
-      <ul class="contact-list">
-        <li>
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <div><span>Phone</span><a href="tel:+64211110283">021 111 0283</a></div>
-        </li>
-        <li>
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
-          <div><span>Email</span><a href="#contact" data-gmail data-user="michael.rohland" data-domain="icloud.com" data-su="Plumbing%20enquiry%20%E2%80%94%20RPL%20Plumbing" data-body="Hi%20Michael%2C%0A%0AI%27d%20like%20a%20hand%20with%20some%20plumbing%20work.%0A%0AJob%20details%3A%20%0ALocation%3A%20%0A%0AThanks">Email Michael</a></div>
-        </li>
-        <li>
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
-          <div><span>Service area</span>Cromwell &amp; Central Otago</div>
-        </li>
-        <li>
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <div><span>Hours</span>Mon&ndash;Fri, 7:30am&ndash;5pm &middot; urgent callouts by phone</div>
-        </li>
-      </ul>
-      <div class="contact-social">
-        <a href="https://www.facebook.com/pages/Rohland-Plumbing-LTD/362235990647266" target="_blank" rel="noopener" aria-label="RPL Plumbing on Facebook">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-        </a>
-        <a href="https://twitter.com/rpl20041" target="_blank" rel="noopener" aria-label="RPL Plumbing on X (Twitter)">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-        </a>
-        <a href="https://www.instagram.com/explore/search/keyword/?q=rpl%20plumbing" target="_blank" rel="noopener" aria-label="Search RPL Plumbing on Instagram">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-        </a>
+  <div class="container">
+    <div class="contact-grid">
+      <div class="reveal">
+        <span class="eyebrow">Get in touch</span>
+        <h2>Contact RPL Plumbing</h2>
+        <ul class="contact-list">
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.94.36 1.86.68 2.75a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.33-1.33a2 2 0 0 1 2.11-.45c.89.32 1.81.55 2.75.68A2 2 0 0 1 22 16.92z"/></svg>
+            <div><span>Phone</span><a href="tel:+6433515421">03 351 5421</a></div>
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            <div><span>Email</span><a href="#" data-gmail data-user="rpl2004" data-domain="xtra.co.nz" data-su="Plumbing%20enquiry%20-%20RPL%20Plumbing" data-body="Hi%20RPL%20Plumbing%2C%0A%0AI%27d%20like%20a%20quote%20for%3A%20%0A%0AAddress%3A%20%0APhone%3A%20">Email RPL Plumbing</a></div>
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div><span>Address</span><span>157A Wairakei Road, Bryndwr, Christchurch 8053</span></div>
+          </li>
+        </ul>
+        <div class="contact-social">
+          <a href="https://www.facebook.com/pages/Rohland-Plumbing-LTD/362235990647266" target="_blank" rel="noopener" aria-label="RPL Plumbing on Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.87v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.88h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>
+          <a href="https://twitter.com/rpl20041" target="_blank" rel="noopener" aria-label="RPL Plumbing on Twitter"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-7 8 8.2 12h-6.4l-5-7.3L5.9 22H2.8l7.5-8.6L2.4 2h6.6l4.5 6.7zM17.8 20h1.7L7.3 3.8H5.5z"/></svg></a>
+        </div>
+      </div>
+      <div class="contact-actions reveal">
+        <h2 style="font-size:1.4rem;margin-bottom:8px">Get your job sorted</h2>
+        <p>Give us a call for a prompt quote. We service Christchurch.</p>
+        <a class="btn btn-green" href="tel:+6433515421">Call 03 351 5421</a>
+        <a class="btn btn-navy" href="#" data-gmail data-user="rpl2004" data-domain="xtra.co.nz" data-su="Plumbing%20enquiry%20-%20RPL%20Plumbing" data-body="Hi%20RPL%20Plumbing%2C%0A%0AI%27d%20like%20a%20quote%20for%3A%20%0A%0AAddress%3A%20%0APhone%3A%20">Email us</a>
       </div>
     </div>
-    <div class="contact-actions reveal">
-      <a class="btn btn-green" href="tel:+64211110283">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        Call RPL Plumbing</a>
-      <a class="btn btn-ghost" href="#contact" data-gmail data-user="michael.rohland" data-domain="icloud.com" data-su="Plumbing%20enquiry%20%E2%80%94%20RPL%20Plumbing" data-body="Hi%20Michael%2C%0A%0AI%27d%20like%20a%20hand%20with%20some%20plumbing%20work.%0A%0AJob%20details%3A%20%0ALocation%3A%20%0A%0AThanks">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
-        Email us about your job</a>
-      <p>We'll get back to you the same working day.</p>
-    </div>
+  </div>
+  <div class="map-wrap reveal">
+    <iframe title="RPL Plumbing, 157A Wairakei Road, Bryndwr, Christchurch" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=157A%20Wairakei%20Road%2C%20Bryndwr%2C%20Christchurch%208053&output=embed"></iframe>
   </div>
 </section>
-
-<div class="map-wrap">
-  <div class="container">
-    <iframe title="Map of RPL Plumbing Ltd, Cromwell" src="https://www.google.com/maps?q=RPL%20Plumbing%20Ltd%20Cromwell%20New%20Zealand&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-  </div>
-</div>
 
 <footer>
   <div class="container">
     <div class="footer-grid">
-      <a class="footer-logo" href="#top" aria-label="Back to top"><img src="img/logo.png" alt="RPL Plumbing Ltd logo" loading="lazy"></a>
+      <div class="footer-logo">
+        <img src="img/logo_footer.png" alt="RPL Plumbing Ltd">
+        <p>157A Wairakei Road, Bryndwr, Christchurch 8053, New Zealand</p>
+      </div>
       <ul class="footer-links">
         <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#reviews">Reviews</a></li>
-        <li><a href="terms.html">Terms &amp; Conditions</a></li>
-        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="#hot-water">Hot water</a></li>
+        <li><a href="#maintenance">Maintenance</a></li>
+        <li><a href="#backflow">Backflow &amp; IQP</a></li>
+        <li><a href="#crew">Our Team</a></li>
+        <li><a href="#reviews">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="footer-social">
-        <a href="https://www.facebook.com/pages/Rohland-Plumbing-LTD/362235990647266" target="_blank" rel="noopener" aria-label="RPL Plumbing on Facebook">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-        </a>
-        <a href="https://twitter.com/rpl20041" target="_blank" rel="noopener" aria-label="RPL Plumbing on X (Twitter)">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-        </a>
-        <a href="https://www.instagram.com/explore/search/keyword/?q=rpl%20plumbing" target="_blank" rel="noopener" aria-label="Search RPL Plumbing on Instagram">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-        </a>
+        <a href="https://www.facebook.com/pages/Rohland-Plumbing-LTD/362235990647266" target="_blank" rel="noopener" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.87v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.88h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>
+        <a href="https://twitter.com/rpl20041" target="_blank" rel="noopener" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-7 8 8.2 12h-6.4l-5-7.3L5.9 22H2.8l7.5-8.6L2.4 2h6.6l4.5 6.7zM17.8 20h1.7L7.3 3.8H5.5z"/></svg></a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2026 RPL Plumbing Ltd &middot; Cromwell, Central Otago</span>
-      <span>Registered Master Plumbers</span>
+      <span>&copy; <span id="year">2026</span> RPL Plumbing Ltd &middot; Christchurch</span>
+      <span><a href="terms.html">Terms</a> &middot; <a href="privacy.html">Privacy</a></span>
     </div>
   </div>
 </footer>
