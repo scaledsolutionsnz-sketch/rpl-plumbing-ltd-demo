@@ -272,6 +272,23 @@ footer{background:var(--navy);color:#c6c9e2;padding:3.2rem 0 2.2rem}
 .logo-strip img:hover{opacity:1;transform:translateY(-3px)}
 .note-band{background:var(--bone);border:1px solid var(--line);padding:18px 22px;border-radius:12px;color:var(--muted);margin-top:22px}
 .note-band strong{color:var(--navy)}
+
+.rental-detail{align-items:start}
+.rental-detail .tick-list{margin-top:24px}
+.rental-detail .detail-media{align-self:stretch}
+.rental-detail .detail-media img{height:100%;object-fit:cover;max-height:640px}
+.rpl-faq{background:var(--bone)}
+.rpl-faq h2{color:var(--navy);font-size:clamp(28px,3vw,40px);margin-bottom:28px}
+.rpl-faq-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}
+.rpl-faq details{border:1px solid var(--line);border-radius:12px;background:white;padding:0 24px}
+.rpl-faq summary{list-style:none;cursor:pointer;position:relative;display:flex;align-items:center;min-height:100px;padding:22px 32px 22px 0;font-weight:700;font-size:19px;line-height:1.4;color:var(--navy)}
+.rpl-faq summary::-webkit-details-marker{display:none}
+.rpl-faq summary:after{content:'+';position:absolute;right:0;font-size:26px;color:var(--green-ink)}
+.rpl-faq details[open] summary:after{content:'−'}
+.rpl-faq p{font-size:16px;line-height:1.7;color:var(--muted);padding-bottom:24px;margin:0}
+.rpl-faq p a{color:var(--navy);text-decoration:underline}
+.rpl-faq summary:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+@media(max-width:860px){.rental-detail .detail-media img{height:auto;max-height:360px;aspect-ratio:4/3}.rpl-faq-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -288,6 +305,7 @@ footer{background:var(--navy);color:#c6c9e2;padding:3.2rem 0 2.2rem}
         <li><a href="#about">About</a></li>
         <li><a href="#crew">Our Team</a></li>
         <li><a href="#reviews">Testimonials</a></li>
+        <li><a href="#faq">FAQs</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a class="nav-call" href="tel:+6433515421">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.94.36 1.86.68 2.75a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.33-1.33a2 2 0 0 1 2.11-.45c.89.32 1.81.55 2.75.68A2 2 0 0 1 22 16.92z"/></svg>
@@ -422,15 +440,13 @@ footer{background:var(--navy);color:#c6c9e2;padding:3.2rem 0 2.2rem}
       <li>Water main repairs, leaking or replacement</li>
     </ul>
 
-    <div class="detail flip reveal" style="margin:3.4rem 0 2.4rem">
+    <div class="detail flip rental-detail reveal" style="margin:3.4rem 0 2.4rem">
       <div class="detail-media"><img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&h=800&q=75" alt="A tidy rental bathroom with shower and vanity" width="1200" height="800" loading="lazy"></div>
       <div>
         <span class="eyebrow">For landlords</span>
         <h3>Plumbing rental maintenance</h3>
         <p>Fast emergency response and preventative maintenance for residential properties, apartments, private landlords and investors.</p>
-      </div>
-    </div>
-    <ul class="tick-list col-2 reveal">
+    <ul class="tick-list">
       <li>Email, text or phone your order through to us</li>
       <li>We contact the tenant straight away so they are not chasing you</li>
       <li>We arrange a suitable time for access</li>
@@ -441,6 +457,8 @@ footer{background:var(--navy);color:#c6c9e2;padding:3.2rem 0 2.2rem}
       <li>A 24/7 service answered by a team member</li>
       <li>Discounted rates for property managers</li>
     </ul>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -560,6 +578,7 @@ footer{background:var(--navy);color:#c6c9e2;padding:3.2rem 0 2.2rem}
   </div>
 </section>
 
+<section class="section rpl-faq" id="faq"><div class="container"><span class="eyebrow">Helpful answers</span><h2>Frequently asked questions</h2><div class="rpl-faq-grid"><details><summary>How do I book a plumbing job?</summary><p>Call <a href="tel:+6433515421">03 351 5421</a> or <a href="mailto:rpl2004@xtra.co.nz">email the team</a> with the property address and a description of the work. We will arrange a suitable time.</p></details><details><summary>Which areas do you service?</summary><p>RPL Plumbing services homes and light commercial properties across Christchurch. Contact the team to confirm availability for your address.</p></details><details><summary>Do you work with landlords and property managers?</summary><p>Yes. You can send a job request by email, text or phone. We contact the tenant and arrange access, and invoices include the property address, tenant details, descriptions and photos.</p></details><details><summary>Will you check before doing extra work?</summary><p>For rental maintenance, our plumbers do not carry out work outside the original job request. We advise on site if a job is going to exceed a maximum figure.</p></details><details><summary>Can you help with hot water problems?</summary><p>Yes. Contact the team about your hot water system and describe the issue so we can discuss the work required.</p></details><details><summary>What plumbing maintenance do you offer?</summary><p>Our services include tap and mixer repairs, toilet cistern repairs, shower fittings, leaking pipework, blocked internal waste pipes and water main repairs.</p></details></div></div></section>
 <section class="section contact" id="contact">
   <div class="container">
     <div class="contact-grid">
