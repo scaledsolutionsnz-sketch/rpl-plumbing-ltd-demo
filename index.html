@@ -240,7 +240,7 @@ header.scrolled{box-shadow:0 6px 24px rgba(39,42,99,.08)}
 .contact-list{list-style:none;display:grid;gap:1.1rem;margin-top:1.8rem}
 .contact-list li{display:flex;gap:.9rem;align-items:flex-start}
 .contact-list svg{flex:none;color:var(--green);margin-top:.2rem}
-.contact-list a{color:#fff;text-decoration:none;font-weight:600}
+.contact-list a,.contact-list .contact-val{color:#fff;text-decoration:none;font-weight:600}
 .contact-list a:hover{text-decoration:underline}
 .contact-list span{display:block;font-size:.82rem;color:#a9adcd;letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin-bottom:.1rem}
 .contact-social{display:flex;gap:.9rem;margin-top:2rem}
@@ -312,7 +312,11 @@ footer{background:var(--navy);color:#c6c9e2;padding:3.2rem 0 2.2rem}
 .rpl-faq p a{color:var(--navy);text-decoration:underline}
 .rpl-faq summary:focus-visible{outline:3px solid var(--green);outline-offset:3px}
 @media(max-width:860px){.rental-detail .detail-media img{height:auto;max-height:360px;aspect-ratio:4/3}.rpl-faq-grid{grid-template-columns:1fr}}
-@media(max-width:760px){.hero .container .hero-content{padding-top:11rem}}
+/* from 761 to 1050px the stickers stack down the right of the hero, so the copy column
+   ends 24px short of them. 104.35% of the container is the hero width less the left
+   margin, and the sticker column takes 174px with its tilt. */
+@media(max-width:1050px){.hero .container .hero-content{max-width:min(720px,calc(104.35% - 198px))}}
+@media(max-width:760px){.hero .container .hero-content{padding-top:11rem;max-width:720px}}
 </style>
 </head>
 <body>
@@ -560,9 +564,9 @@ footer{background:var(--navy);color:#c6c9e2;padding:3.2rem 0 2.2rem}
 
 <section class="section services">
   <div class="container">
-    <div class="section-head reveal" style="text-align:center">
+    <div class="section-head reveal" style="text-align:center;margin-left:auto;margin-right:auto">
       <span class="eyebrow">Trusted by</span>
-      <h2>Property managers who use us</h2>
+      <h2>Businesses who use us</h2>
     </div>
     <div class="logo-strip reveal">
       <img src="img/braziers-property-investments-logo.jpg" alt="Braziers Property Investments" loading="lazy" width="700" height="525">
@@ -621,7 +625,7 @@ footer{background:var(--navy);color:#c6c9e2;padding:3.2rem 0 2.2rem}
           </li>
           <li>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <div><span>Address</span><span>157A Wairakei Road, Bryndwr, Christchurch 8053</span></div>
+            <div><span>Address</span><p class="contact-val">157A Wairakei Road, Bryndwr, Christchurch&nbsp;8053</p></div>
           </li>
         </ul>
         <div class="contact-social">
